@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "profile": {
+    "name": "Léo Brival",
+    "bio": "Product Owner & Web Maker - The cornerstone between your devs, designers and customers 🗿",
+    "gitHubUsername": "leobrival",
+    "socialMediaHandle": "@leobrival"
+  },
+  "links": [
+    {
+      "id": "linkedin",
+      "title": "LinkedIn",
+      "url": "https://www.linkedin.com/in/leobrival/",
+      "icon": "💼",
+      "description": "Professional profile",
+      "order": 0
+    },
+    {
+      "id": "image",
+      "title": "Photo",
+      "url": "https://leobrival.com",
+      "icon": "📸",
+      "description": "Portfolio image",
+      "order": 1
+    },
+    {
+      "id": "github",
+      "title": "GitHub",
+      "url": "https://github.com/leobrival",
+      "icon": "💻",
+      "description": "Check out my code",
+      "order": 2
+    },
+    {
+      "id": "topographic",
+      "title": "Topographic Studio",
+      "url": "https://www.topographic.studio/",
+      "icon": "🏢",
+      "description": "Creative studio work",
+      "order": 3
+    },
+    {
+      "id": "norru",
+      "title": "Norru",
+      "url": "https://www.norru.fr/",
+      "icon": "🎯",
+      "description": "Explore Norru",
+      "order": 4
+    },
+    {
+      "id": "calendly",
+      "title": "Book a Meeting",
+      "url": "https://calendly.com/leobrival",
+      "icon": "📅",
+      "description": "Schedule a call with me",
+      "order": 5
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "url": "mailto:leo@leobrival.com",
+      "icon": "📧",
+      "description": "Get in touch",
+      "order": 6
+    }
+  ]
+}
