@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit && echo 'TypeScript check passed'",
     "test": "vitest",
     "test:watch": "vitest --watch"
   },
