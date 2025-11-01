@@ -5,6 +5,19 @@ interface LinkButtonProps {
 }
 
 export function LinkButton({ link }: LinkButtonProps): React.ReactElement {
+  // Special handling for image links - display as a visual divider
+  if (link.id === 'image' && (link.url.endsWith('.jpg') || link.url.endsWith('.png'))) {
+    return (
+      <div className="my-2 overflow-hidden rounded-lg">
+        <img
+          src={link.url}
+          alt={link.title}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
     <a
       href={link.url}
