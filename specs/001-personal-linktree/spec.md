@@ -101,23 +101,25 @@ A visitor accesses the linktree from a smartphone. The interface is fully optimi
 - **FR-001**: System MUST display a personalized dashboard with profile information (name, bio, profile picture)
 - **FR-002**: System MUST render a list of links with clickable elements that navigate to external URLs
 - **FR-003**: System MUST support responsive design that works on mobile (375px+), tablet (768px+), and desktop (1920px+) viewports
-- **FR-004**: System MUST load and display link data from a configuration source (JSON file or similar structure)
+- **FR-004**: System MUST load and display link data from data.json file
 - **FR-005**: System MUST allow links to be clicked and open in a new browser tab
-- **FR-006**: System MUST display profile picture/avatar with a fallback if image is missing
-- **FR-007**: System MUST support customization of profile data (name, bio, links) through configuration
-- **FR-008**: System MUST render with shadcn/ui components for consistent design
-- **FR-009**: System MUST be built with Vite for fast development and optimized production builds
-- **FR-010**: System MUST be deployable to GitHub Pages without manual configuration
+- **FR-006**: System MUST fetch and display profile picture from GitHub API using username from data.json with fallback avatar
+- **FR-007**: System MUST support customization of profile data (name, bio, GitHub username, links) through data.json
+- **FR-008**: System MUST render with shadcn/ui components for consistent and minimalist design
+- **FR-009**: System MUST display skeleton loaders for all components while data is loading
+- **FR-010**: System MUST be built with Vite for fast development and optimized production builds
+- **FR-011**: System MUST be deployable to GitHub Pages without manual configuration
 
 ### Key Entities *(include if feature involves data)*
 
 - **Profile**: Represents the linktree owner's information
-  - Attributes: name (string), bio (string), profilePictureUrl (string), socialMediaHandle (optional string)
+  - Attributes: name (string), bio (string), gitHubUsername (string), socialMediaHandle (optional string)
+  - Note: Profile picture is fetched dynamically from GitHub API using gitHubUsername
 
 - **Link**: Represents a single link entry on the linktree
   - Attributes: title (string), url (string), icon (string, optional), description (string, optional), order (number)
 
-- **Linktree**: The root entity containing profile and collection of links
+- **Linktree Data**: The root entity stored in data.json containing profile and collection of links
   - Attributes: profile (Profile), links (Link[])
 
 ## Success Criteria *(mandatory)*
@@ -139,11 +141,15 @@ A visitor accesses the linktree from a smartphone. The interface is fully optimi
 
 ## Assumptions
 
-- Profile data will be stored in a static JSON file (config.json) in the project root or public directory
-- The linktree owner will manually edit the configuration file to update their information
+- Profile data will be stored in a static JSON file (data.json) in the public directory
+- The linktree owner will manually edit the data.json file to update their information
+- Profile picture will be fetched from GitHub API based on username stored in data.json
 - GitHub Pages will be configured as the deployment target
 - The primary use case is individual linktree owners sharing their profile and links
 - Performance targets assume standard residential internet speeds (3G minimum)
+- All UI components will use shadcn/ui for consistency
+- Each component will include a skeleton loader for handling loading states
+- Design will be minimalist and clean (similar to Linktree's simple aesthetic)
 
 ## Out of Scope
 
