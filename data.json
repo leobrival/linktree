@@ -17,10 +17,10 @@
     },
     {
       "id": "image",
-      "title": "Photo",
-      "url": "https://leobrival.com",
+      "title": "[Image #1]",
+      "url": "/linktree/images/divider.jpg",
       "icon": "📸",
-      "description": "Portfolio image",
+      "description": "Visual divider",
       "order": 1
     },
     {
