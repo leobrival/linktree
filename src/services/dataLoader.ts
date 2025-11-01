@@ -6,8 +6,12 @@ import type { LinktreeData } from './types';
 
 export async function loadLinktreeData(): Promise<LinktreeData> {
   try {
-    const baseUrl = import.meta.env.BASE_URL;
-    const response = await fetch(`${baseUrl}data.json`);
+    // Use a relative URL that works in both dev and production
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const dataUrl = baseUrl.endsWith('/')
+      ? `${baseUrl}data.json`
+      : `${baseUrl}/data.json`;
+    const response = await fetch(dataUrl);
 
     if (!response.ok) {
       throw new Error(`Failed to load data.json: ${response.status}`);
