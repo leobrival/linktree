@@ -18,10 +18,10 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Initialize Vite project with React 18 + TypeScript 5 using `npm create vite@latest linktree -- --template react-ts && cd linktree && npm install`
+- [ ] T001 Initialize Vite project with React 18 + TypeScript 5 using `pnpm create vite@latest linktree -- --template react-ts && cd linktree && pnpm install`
 - [ ] T002 [P] Install Tailwind CSS and configure in `tailwind.config.js` and `postcss.config.js`
 - [ ] T003 [P] Install and configure shadcn/ui CLI for component management
-- [ ] T004 [P] Install additional dependencies (axios, vitest, @testing-library/react) in `package.json`
+- [ ] T004 [P] Install additional dependencies (axios, vitest, @testing-library/react) in `pnpm` dependency list
 - [ ] T005 Create directory structure: `src/{components,pages,services,hooks,styles}`, `public/`, `tests/{components,services,integration}`
 
 ---
@@ -179,14 +179,14 @@
 **Purpose**: Optimize performance and configure production deployment
 
 - [ ] T070 [P] Run Lighthouse audit: target Performance 90+, Accessibility 95+, SEO 95+
-- [ ] T071 [P] Analyze bundle size with `npm run build` and verify < 200KB gzipped (check dist/ folder size)
+- [ ] T071 [P] Analyze bundle size with `pnpm build` and verify < 200KB gzipped (check dist/ folder size)
 - [ ] T072 [P] Optimize images: compress profile picture, optimize any other assets
 - [ ] T073 [P] Configure Vite production build: `vite.config.ts` minification, source maps for debugging
-- [ ] T074 Create `.github/workflows/deploy.yml` workflow to auto-deploy on push to main branch
+- [ ] T074 Create `.github/workflows/deploy.yml` workflow to auto-deploy on push to main branch (use pnpm)
 - [ ] T075 Configure GitHub Pages: Settings → Pages → set source to "GitHub Actions"
 - [ ] T076 Test deployment: push to main branch, verify GitHub Actions runs, site accessible at `https://username.github.io/linktree`
 - [ ] T077 [P] Add cache headers in `vite.config.ts`: 24h cache for data.json, 7d for static assets
-- [ ] T078 Test production build locally: `npm run build && npm run preview`, verify all features work
+- [ ] T078 Test production build locally: `pnpm build && pnpm preview`, verify all features work
 
 ---
 
@@ -201,7 +201,7 @@
 - [ ] T083 Create `TROUBLESHOOTING.md`: common issues (blank page on deploy, GitHub API rate limit, etc.) with solutions
 - [ ] T084 [P] Add code comments in complex functions: GitHub API fallback logic, data validation logic
 - [ ] T085 Clean up unused dependencies and optimize imports
-- [ ] T086 Run `npm run build` final verification: check bundle size, verify no console warnings/errors
+- [ ] T086 Run `pnpm build` final verification: check bundle size, verify no console warnings/errors
 - [ ] T087 Test with different browsers: Chrome, Firefox, Safari - verify compatibility
 
 **Checkpoint**: Polish complete, ready for production

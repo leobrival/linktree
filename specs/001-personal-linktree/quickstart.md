@@ -8,7 +8,7 @@
 ### Prerequisites
 
 - Node.js 18.x or higher
-- npm or pnpm package manager
+- pnpm package manager (recommended) or npm
 - Git for version control
 - GitHub account (for profile picture)
 
@@ -16,28 +16,28 @@
 
 1. **Create Vite project**
 ```bash
-npm create vite@latest linktree -- --template react-ts
+pnpm create vite@latest linktree -- --template react-ts
 cd linktree
-npm install
+pnpm install
 ```
 
 2. **Install shadcn/ui**
 ```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-npm install next-themes
+pnpm add -D tailwindcss postcss autoprefixer
+pnpm exec tailwindcss init -p
+pnpm add next-themes
 ```
 
 Add shadcn/ui CLI:
 ```bash
-npm install -D @shadcn-ui/ui
-npx shadcn-ui init
+pnpm add -D @shadcn-ui/ui
+pnpm exec shadcn-ui init
 ```
 
 3. **Install additional dependencies**
 ```bash
-npm install axios
-npm install -D vitest @testing-library/react @testing-library/jest-dom
+pnpm add axios
+pnpm add -D vitest @testing-library/react @testing-library/jest-dom
 ```
 
 4. **Project structure initialization**
@@ -290,28 +290,28 @@ export function ProfileSkeleton() {
 
 ```bash
 # Development server with hot reload
-npm run dev
+pnpm dev
 
 # Build for production
-npm run build
+pnpm build
 
 # Preview production build locally
-npm run preview
+pnpm preview
 
 # Run tests
-npm run test
+pnpm test
 
 # Run tests in watch mode
-npm run test:watch
+pnpm test:watch
 ```
 
 ### Adding shadcn/ui Components
 
 ```bash
 # Add individual components as needed
-npx shadcn-ui add button
-npx shadcn-ui add card
-npx shadcn-ui add skeleton
+pnpm exec shadcn-ui add button
+pnpm exec shadcn-ui add card
+pnpm exec shadcn-ui add skeleton
 ```
 
 ### Environment Setup
@@ -447,11 +447,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install
-      - run: npm run build
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm build
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
