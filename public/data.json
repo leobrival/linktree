@@ -18,9 +18,9 @@
     {
       "id": "image",
       "title": "[Image #1]",
-      "url": "/linktree/images/divider.jpg",
+      "url": "/linktree/images/profile-divider.webp",
       "icon": "📸",
-      "description": "Visual divider",
+      "description": "Profile visual separator",
       "order": 1
     },
     {
